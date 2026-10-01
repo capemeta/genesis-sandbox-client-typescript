@@ -1,0 +1,55 @@
+{
+  "name": "genesis-sandbox-client-typescript",
+  "version": "0.1.0",
+  "description": "Zero-dependency TypeScript client SDK for Genesis Sandbox (sessions, exec, SSE logs, WorkspaceFS, artifacts) for Node.js runtimes",
+  "keywords": [
+    "genesis",
+    "sandbox",
+    "sdk",
+    "code-execution",
+    "typescript",
+    "nodejs"
+  ],
+  "license": "Apache-2.0",
+  "author": "caoshouling <1046757614@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capemeta/genesis-sandbox-client-typescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/capemeta/genesis-sandbox-client-typescript/issues"
+  },
+  "homepage": "https://github.com/capemeta/genesis-sandbox-client-typescript#readme",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --experimental-strip-types --no-warnings --test \"tests/*.test.ts\"",
+    "lint": "eslint .",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@types/node": "^24.10.0",
+    "eslint": "^9.39.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.0"
+  }
+}
